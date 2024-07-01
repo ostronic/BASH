@@ -1,0 +1,23 @@
+#!/bin/bash
+##Short script connect to your openvpn server, parsing your USERNAME and PASSWORD; So u don't need to pass it in all the time in the cmd 
+
+VPN_USER=EVnJqD87kFN7kC1x   # PUT YOUR USERNAME HERE
+VPN_PASS=E1r9wPpjWYh07nrce3ff4SCUSMY4pND5   # PUT YOUR PASSWORD HERE
+FILE_NAME=$@     #ACCEPTS AND EXPANDS THE ARGs FROM THE FILE command line
+
+show_usage() {
+  echo "Usage: $0 Path/filename.ovpn" 1>&2
+  if [ $FILE_NAME -z ] 2>/dev/null; then
+    exit 24 # Exit with arbitrary nonzero return code
+  else
+    exit 1
+  fi
+}
+
+
+if [ $FILE_NAME !$?  ] 2>/dev/null; then
+  show_usage 
+else
+   sudo bash -c 'openvpn --config '"$FILE_NAME"' --auth-user-pass <(echo -e "'"$VPN_USER"'\n'"$VPN_PASS"'")'
+
+fi
