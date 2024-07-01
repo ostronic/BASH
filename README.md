@@ -1,5 +1,6 @@
 # BASH
 #  For the 'ProtonVPNConnect'   
+  Suppose you're like me, and tired of always inputing your your username and password on the command line, everytime you want to connect to your openvpn VPN server; Then this script is for you.
 Usage: ./ProtonVPNConnect Path/filename.ovpn 
 NOTE: Make sure you parse the full path to file
 
