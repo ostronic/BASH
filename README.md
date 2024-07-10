@@ -6,7 +6,7 @@ NOTE: Make sure you parse the full path to file
 
 From your $HOME directory:
 #  Clone the repository;
-    git clone [https://github.com/](https://github.com/ostronic/BASH.git
+    git clone https://github.com/ostronic/BASH.git 
     cd BASH
     ll -t
 
